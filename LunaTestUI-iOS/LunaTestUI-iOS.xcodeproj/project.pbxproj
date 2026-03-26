@@ -1,0 +1,331 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DD000001EE000001FF000001 /* LunaTestUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000001BB000001CC000001 /* LunaTestUIApp.swift */; };
+		DD000002EE000002FF000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000002BB000002CC000002 /* ContentView.swift */; };
+		DD000003EE000003FF000003 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000003BB000003CC000003 /* Models.swift */; };
+		DD000004EE000004FF000004 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000004BB000004CC000004 /* APIService.swift */; };
+		DD000005EE000005FF000005 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000005BB000005CC000005 /* Helpers.swift */; };
+		DD000006EE000006FF000006 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000006BB000006CC000006 /* FeedView.swift */; };
+		DD000007EE000007FF000007 /* VenuesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000007BB000007CC000007 /* VenuesView.swift */; };
+		DD000008EE000008FF000008 /* PlansView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000008BB000008CC000008 /* PlansView.swift */; };
+		DD000009EE000009FF000009 /* InterestsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000009BB000009CC000009 /* InterestsView.swift */; };
+		DD00000AEE00000AFF00000A /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000ABB00000ACC00000A /* UsersView.swift */; };
+		DD00000BEE00000BFF00000B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000BBB00000BCC00000B /* SettingsView.swift */; };
+		DD00000CEE00000CFF00000C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA00000CBB00000CCC00000C /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AA000001BB000001CC000001 /* LunaTestUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunaTestUIApp.swift; sourceTree = "<group>"; };
+		AA000002BB000002CC000002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AA000003BB000003CC000003 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		AA000004BB000004CC000004 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		AA000005BB000005CC000005 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		AA000006BB000006CC000006 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
+		AA000007BB000007CC000007 /* VenuesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuesView.swift; sourceTree = "<group>"; };
+		AA000008BB000008CC000008 /* PlansView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlansView.swift; sourceTree = "<group>"; };
+		AA000009BB000009CC000009 /* InterestsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestsView.swift; sourceTree = "<group>"; };
+		AA00000ABB00000ACC00000A /* UsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersView.swift; sourceTree = "<group>"; };
+		AA00000BBB00000BCC00000B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		AA00000CBB00000CCC00000C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AA00000DBB00000DCC00000D /* LunaTestUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LunaTestUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA00000EBB00000ECC00000E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CC000002DD000002EE000002 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BB000001AA000001DD000001 = {
+			isa = PBXGroup;
+			children = (
+				BB000002AA000002DD000002 /* LunaTestUI-iOS */,
+				BB000003AA000003DD000003 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BB000002AA000002DD000002 /* LunaTestUI-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				AA000001BB000001CC000001 /* LunaTestUIApp.swift */,
+				AA000002BB000002CC000002 /* ContentView.swift */,
+				AA000003BB000003CC000003 /* Models.swift */,
+				AA000004BB000004CC000004 /* APIService.swift */,
+				AA000005BB000005CC000005 /* Helpers.swift */,
+				AA000006BB000006CC000006 /* FeedView.swift */,
+				AA000007BB000007CC000007 /* VenuesView.swift */,
+				AA000008BB000008CC000008 /* PlansView.swift */,
+				AA000009BB000009CC000009 /* InterestsView.swift */,
+				AA00000ABB00000ACC00000A /* UsersView.swift */,
+				AA00000BBB00000BCC00000B /* SettingsView.swift */,
+				AA00000CBB00000CCC00000C /* Assets.xcassets */,
+				AA00000EBB00000ECC00000E /* Info.plist */,
+			);
+			path = "LunaTestUI-iOS";
+			sourceTree = "<group>";
+		};
+		BB000003AA000003DD000003 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA00000DBB00000DCC00000D /* LunaTestUI.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FF000001AA000001BB000001 /* LunaTestUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EE000005FF000005AA000005 /* Build configuration list for PBXNativeTarget "LunaTestUI" */;
+			buildPhases = (
+				CC000001DD000001EE000001 /* Sources */,
+				CC000002DD000002EE000002 /* Frameworks */,
+				CC000003DD000003EE000003 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LunaTestUI;
+			productName = LunaTestUI;
+			productReference = AA00000DBB00000DCC00000D /* LunaTestUI.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FF000002AA000002BB000002 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 2640;
+				TargetAttributes = {
+					FF000001AA000001BB000001 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+				};
+			};
+			buildConfigurationList = EE000006FF000006AA000006 /* Build configuration list for PBXProject "LunaTestUI-iOS" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BB000001AA000001DD000001;
+			productRefGroup = BB000003AA000003DD000003 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FF000001AA000001BB000001 /* LunaTestUI */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CC000003DD000003EE000003 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD00000CEE00000CFF00000C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CC000001DD000001EE000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD000001EE000001FF000001 /* LunaTestUIApp.swift in Sources */,
+				DD000002EE000002FF000002 /* ContentView.swift in Sources */,
+				DD000003EE000003FF000003 /* Models.swift in Sources */,
+				DD000004EE000004FF000004 /* APIService.swift in Sources */,
+				DD000005EE000005FF000005 /* Helpers.swift in Sources */,
+				DD000006EE000006FF000006 /* FeedView.swift in Sources */,
+				DD000007EE000007FF000007 /* VenuesView.swift in Sources */,
+				DD000008EE000008FF000008 /* PlansView.swift in Sources */,
+				DD000009EE000009FF000009 /* InterestsView.swift in Sources */,
+				DD00000AEE00000AFF00000A /* UsersView.swift in Sources */,
+				DD00000BEE00000BFF00000B /* SettingsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		EE000001FF000001AA000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "LunaTestUI-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.luna.testui;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EE000002FF000002AA000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "LunaTestUI-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.luna.testui;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EE000003FF000003AA000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 33K9674Q25;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EE000004FF000004AA000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 33K9674Q25;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EE000005FF000005AA000005 /* Build configuration list for PBXNativeTarget "LunaTestUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE000001FF000001AA000001 /* Debug */,
+				EE000002FF000002AA000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EE000006FF000006AA000006 /* Build configuration list for PBXProject "LunaTestUI-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE000003FF000003AA000003 /* Debug */,
+				EE000004FF000004AA000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FF000002AA000002BB000002 /* Project object */;
+}

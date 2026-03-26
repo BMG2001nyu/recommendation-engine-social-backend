@@ -1,0 +1,71 @@
+{
+  "": {
+    "swift-dependencies": "/Users/brat/recommendation-engine-social-backend/recommendation-engine-social-backend/LunaTestUI/.build/arm64-apple-macosx/debug/LunaTestUI.build/master.swiftdeps"
+  },
+  "/Users/brat/recommendation-engine-social-backend/recommendation-engine-social-backend/LunaTestUI/Sources/APIService.swift": {
+    "dependencies": "/Users/brat/recommendation-engine-social-backend/recommendation-engine-social-backend/LunaTestUI/.build/arm64-apple-macosx/debug/LunaTestUI.build/APIService.d",
+    "object": "/Users/brat/recommendation-engine-social-backend/recommendation-engine-social-backend/LunaTestUI/.build/arm64-apple-macosx/debug/LunaTestUI.build/APIService.swift.o",
+    "swiftmodule": "/Users/brat/recommendation-engine-social-backend/recommendation-engine-social-backend/LunaTestUI/.build/arm64-apple-macosx/debug/LunaTestUI.build/APIService~partial.swiftmodule",
+    "swift-dependencies": "/Users/brat/recommendation-engine-social-backend/recommendation-engine-social-backend/LunaTestUI/.build/arm64-apple-macosx/debug/LunaTestUI.build/APIService.swiftdeps"
+  },
+  "/Users/brat/recommendation-engine-social-backend/recommendation-engine-social-backend/LunaTestUI/Sources/ContentView.swift": {
+    "dependencies": "/Users/brat/recommendation-engine-social-backend/recommendation-engine-social-backend/LunaTestUI/.build/arm64-apple-macosx/debug/LunaTestUI.build/ContentView.d",
+    "object": "/Users/brat/recommendation-engine-social-backend/recommendation-engine-social-backend/LunaTestUI/.build/arm64-apple-macosx/debug/LunaTestUI.build/ContentView.swift.o",
+    "swiftmodule": "/Users/brat/recommendation-engine-social-backend/recommendation-engine-social-backend/LunaTestUI/.build/arm64-apple-macosx/debug/LunaTestUI.build/ContentView~partial.swiftmodule",
+    "swift-dependencies": "/Users/brat/recommendation-engine-social-backend/recommendation-engine-social-backend/LunaTestUI/.build/arm64-apple-macosx/debug/LunaTestUI.build/ContentView.swiftdeps"
+  },
+  "/Users/brat/recommendation-engine-social-backend/recommendation-engine-social-backend/LunaTestUI/Sources/FeedView.swift": {
+    "dependencies": "/Users/brat/recommendation-engine-social-backend/recommendation-engine-social-backend/LunaTestUI/.build/arm64-apple-macosx/debug/LunaTestUI.build/FeedView.d",
+    "object": "/Users/brat/recommendation-engine-social-backend/recommendation-engine-social-backend/LunaTestUI/.build/arm64-apple-macosx/debug/LunaTestUI.build/FeedView.swift.o",
+    "swiftmodule": "/Users/brat/recommendation-engine-social-backend/recommendation-engine-social-backend/LunaTestUI/.build/arm64-apple-macosx/debug/LunaTestUI.build/FeedView~partial.swiftmodule",
+    "swift-dependencies": "/Users/brat/recommendation-engine-social-backend/recommendation-engine-social-backend/LunaTestUI/.build/arm64-apple-macosx/debug/LunaTestUI.build/FeedView.swiftdeps"
+  },
+  "/Users/brat/recommendation-engine-social-backend/recommendation-engine-social-backend/LunaTestUI/Sources/Helpers.swift": {
+    "dependencies": "/Users/brat/recommendation-engine-social-backend/recommendation-engine-social-backend/LunaTestUI/.build/arm64-apple-macosx/debug/LunaTestUI.build/Helpers.d",
+    "object": "/Users/brat/recommendation-engine-social-backend/recommendation-engine-social-backend/LunaTestUI/.build/arm64-apple-macosx/debug/LunaTestUI.build/Helpers.swift.o",
+    "swiftmodule": "/Users/brat/recommendation-engine-social-backend/recommendation-engine-social-backend/LunaTestUI/.build/arm64-apple-macosx/debug/LunaTestUI.build/Helpers~partial.swiftmodule",
+    "swift-dependencies": "/Users/brat/recommendation-engine-social-backend/recommendation-engine-social-backend/LunaTestUI/.build/arm64-apple-macosx/debug/LunaTestUI.build/Helpers.swiftdeps"
+  },
+  "/Users/brat/recommendation-engine-social-backend/recommendation-engine-social-backend/LunaTestUI/Sources/InterestsView.swift": {
+    "dependencies": "/Users/brat/recommendation-engine-social-backend/recommendation-engine-social-backend/LunaTestUI/.build/arm64-apple-macosx/debug/LunaTestUI.build/InterestsView.d",
+    "object": "/Users/brat/recommendation-engine-social-backend/recommendation-engine-social-backend/LunaTestUI/.build/arm64-apple-macosx/debug/LunaTestUI.build/InterestsView.swift.o",
+    "swiftmodule": "/Users/brat/recommendation-engine-social-backend/recommendation-engine-social-backend/LunaTestUI/.build/arm64-apple-macosx/debug/LunaTestUI.build/InterestsView~partial.swiftmodule",
+    "swift-dependencies": "/Users/brat/recommendation-engine-social-backend/recommendation-engine-social-backend/LunaTestUI/.build/arm64-apple-macosx/debug/LunaTestUI.build/InterestsView.swiftdeps"
+  },
+  "/Users/brat/recommendation-engine-social-backend/recommendation-engine-social-backend/LunaTestUI/Sources/Models.swift": {
+    "dependencies": "/Users/brat/recommendation-engine-social-backend/recommendation-engine-social-backend/LunaTestUI/.build/arm64-apple-macosx/debug/LunaTestUI.build/Models.d",
+    "object": "/Users/brat/recommendation-engine-social-backend/recommendation-engine-social-backend/LunaTestUI/.build/arm64-apple-macosx/debug/LunaTestUI.build/Models.swift.o",
+    "swiftmodule": "/Users/brat/recommendation-engine-social-backend/recommendation-engine-social-backend/LunaTestUI/.build/arm64-apple-macosx/debug/LunaTestUI.build/Models~partial.swiftmodule",
+    "swift-dependencies": "/Users/brat/recommendation-engine-social-backend/recommendation-engine-social-backend/LunaTestUI/.build/arm64-apple-macosx/debug/LunaTestUI.build/Models.swiftdeps"
+  },
+  "/Users/brat/recommendation-engine-social-backend/recommendation-engine-social-backend/LunaTestUI/Sources/PlansView.swift": {
+    "dependencies": "/Users/brat/recommendation-engine-social-backend/recommendation-engine-social-backend/LunaTestUI/.build/arm64-apple-macosx/debug/LunaTestUI.build/PlansView.d",
+    "object": "/Users/brat/recommendation-engine-social-backend/recommendation-engine-social-backend/LunaTestUI/.build/arm64-apple-macosx/debug/LunaTestUI.build/PlansView.swift.o",
+    "swiftmodule": "/Users/brat/recommendation-engine-social-backend/recommendation-engine-social-backend/LunaTestUI/.build/arm64-apple-macosx/debug/LunaTestUI.build/PlansView~partial.swiftmodule",
+    "swift-dependencies": "/Users/brat/recommendation-engine-social-backend/recommendation-engine-social-backend/LunaTestUI/.build/arm64-apple-macosx/debug/LunaTestUI.build/PlansView.swiftdeps"
+  },
+  "/Users/brat/recommendation-engine-social-backend/recommendation-engine-social-backend/LunaTestUI/Sources/SettingsView.swift": {
+    "dependencies": "/Users/brat/recommendation-engine-social-backend/recommendation-engine-social-backend/LunaTestUI/.build/arm64-apple-macosx/debug/LunaTestUI.build/SettingsView.d",
+    "object": "/Users/brat/recommendation-engine-social-backend/recommendation-engine-social-backend/LunaTestUI/.build/arm64-apple-macosx/debug/LunaTestUI.build/SettingsView.swift.o",
+    "swiftmodule": "/Users/brat/recommendation-engine-social-backend/recommendation-engine-social-backend/LunaTestUI/.build/arm64-apple-macosx/debug/LunaTestUI.build/SettingsView~partial.swiftmodule",
+    "swift-dependencies": "/Users/brat/recommendation-engine-social-backend/recommendation-engine-social-backend/LunaTestUI/.build/arm64-apple-macosx/debug/LunaTestUI.build/SettingsView.swiftdeps"
+  },
+  "/Users/brat/recommendation-engine-social-backend/recommendation-engine-social-backend/LunaTestUI/Sources/UsersView.swift": {
+    "dependencies": "/Users/brat/recommendation-engine-social-backend/recommendation-engine-social-backend/LunaTestUI/.build/arm64-apple-macosx/debug/LunaTestUI.build/UsersView.d",
+    "object": "/Users/brat/recommendation-engine-social-backend/recommendation-engine-social-backend/LunaTestUI/.build/arm64-apple-macosx/debug/LunaTestUI.build/UsersView.swift.o",
+    "swiftmodule": "/Users/brat/recommendation-engine-social-backend/recommendation-engine-social-backend/LunaTestUI/.build/arm64-apple-macosx/debug/LunaTestUI.build/UsersView~partial.swiftmodule",
+    "swift-dependencies": "/Users/brat/recommendation-engine-social-backend/recommendation-engine-social-backend/LunaTestUI/.build/arm64-apple-macosx/debug/LunaTestUI.build/UsersView.swiftdeps"
+  },
+  "/Users/brat/recommendation-engine-social-backend/recommendation-engine-social-backend/LunaTestUI/Sources/VenuesView.swift": {
+    "dependencies": "/Users/brat/recommendation-engine-social-backend/recommendation-engine-social-backend/LunaTestUI/.build/arm64-apple-macosx/debug/LunaTestUI.build/VenuesView.d",
+    "object": "/Users/brat/recommendation-engine-social-backend/recommendation-engine-social-backend/LunaTestUI/.build/arm64-apple-macosx/debug/LunaTestUI.build/VenuesView.swift.o",
+    "swiftmodule": "/Users/brat/recommendation-engine-social-backend/recommendation-engine-social-backend/LunaTestUI/.build/arm64-apple-macosx/debug/LunaTestUI.build/VenuesView~partial.swiftmodule",
+    "swift-dependencies": "/Users/brat/recommendation-engine-social-backend/recommendation-engine-social-backend/LunaTestUI/.build/arm64-apple-macosx/debug/LunaTestUI.build/VenuesView.swiftdeps"
+  },
+  "/Users/brat/recommendation-engine-social-backend/recommendation-engine-social-backend/LunaTestUI/Sources/main.swift": {
+    "dependencies": "/Users/brat/recommendation-engine-social-backend/recommendation-engine-social-backend/LunaTestUI/.build/arm64-apple-macosx/debug/LunaTestUI.build/main.d",
+    "object": "/Users/brat/recommendation-engine-social-backend/recommendation-engine-social-backend/LunaTestUI/.build/arm64-apple-macosx/debug/LunaTestUI.build/main.swift.o",
+    "swiftmodule": "/Users/brat/recommendation-engine-social-backend/recommendation-engine-social-backend/LunaTestUI/.build/arm64-apple-macosx/debug/LunaTestUI.build/main~partial.swiftmodule",
+    "swift-dependencies": "/Users/brat/recommendation-engine-social-backend/recommendation-engine-social-backend/LunaTestUI/.build/arm64-apple-macosx/debug/LunaTestUI.build/main.swiftdeps"
+  }
+}
