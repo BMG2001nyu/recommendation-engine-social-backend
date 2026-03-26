@@ -135,7 +135,7 @@ struct PlansView: View {
             myPlans = plans.plans
             invitations = invs.invitations
         } catch {
-            self.error = error.localizedDescription
+            if !isCancellation(error) { self.error = error.localizedDescription }
         }
         isLoading = false
     }

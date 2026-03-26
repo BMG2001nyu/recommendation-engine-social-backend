@@ -186,7 +186,7 @@ struct UserDetailView: View {
             user = userResult
             friends = friendsResult.friends
         } catch {
-            self.error = error.localizedDescription
+            if !isCancellation(error) { self.error = error.localizedDescription }
         }
         isLoading = false
     }

@@ -112,7 +112,7 @@ struct FeedView: View {
         do {
             feed = try await api.getFeed(userId: selectedUser, limit: 10)
         } catch {
-            self.error = error.localizedDescription
+            if !isCancellation(error) { self.error = error.localizedDescription }
         }
         isLoading = false
     }

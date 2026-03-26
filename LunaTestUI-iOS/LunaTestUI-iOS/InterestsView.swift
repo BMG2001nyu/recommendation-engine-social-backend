@@ -126,7 +126,7 @@ struct ExpressInterestPanel: View {
         do {
             result = try await api.expressInterest(userId: selectedUser, venueId: selectedVenueId, level: selectedLevel)
         } catch {
-            self.error = error.localizedDescription
+            if !isCancellation(error) { self.error = error.localizedDescription }
         }
         isLoading = false
     }
@@ -200,7 +200,7 @@ struct UserEngagementsPanel: View {
             let r = try await api.getUserEngagements(userId: selectedUser)
             engagements = r.engagements
         } catch {
-            self.error = error.localizedDescription
+            if !isCancellation(error) { self.error = error.localizedDescription }
         }
         isLoading = false
     }
@@ -275,7 +275,7 @@ struct VenueEngagementsPanel: View {
             let r = try await api.getVenueEngagements(venueId: venueId)
             engagements = r.engagements
         } catch {
-            self.error = error.localizedDescription
+            if !isCancellation(error) { self.error = error.localizedDescription }
         }
         isLoading = false
     }

@@ -94,7 +94,7 @@ struct VenuesView: View {
             venues = result.venues
             total = result.total
         } catch {
-            self.error = error.localizedDescription
+            if !isCancellation(error) { self.error = error.localizedDescription }
         }
         isLoading = false
     }

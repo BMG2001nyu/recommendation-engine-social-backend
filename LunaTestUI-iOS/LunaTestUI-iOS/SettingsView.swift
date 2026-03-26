@@ -50,7 +50,7 @@ struct SettingsView: View {
                     // ── Server URL ────────────────────────────────────────────
                     Section {
                         HStack {
-                            TextField("http://10.20.3.95:3000", text: $api.baseURL)
+                            TextField("http://192.168.1.195:3000", text: $api.baseURL)
                                 .autocorrectionDisabled()
                                 .textInputAutocapitalization(.never)
                                 .keyboardType(.URL)
@@ -62,7 +62,7 @@ struct SettingsView: View {
                     } header: {
                         Text("Server URL (Mac's IP)")
                     } footer: {
-                        Text("Your Mac's IP: 10.20.3.95 — update if your network changed.")
+                        Text("Your Mac's IP: 192.168.1.195 — update if your network changed.")
                     }
 
                     // ── Health Check ──────────────────────────────────────────

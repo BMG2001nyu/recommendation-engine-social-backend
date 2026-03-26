@@ -1,6 +1,14 @@
 import Foundation
 import SwiftUI
 
+/// Returns true for any error that represents a task/request cancellation.
+/// SwiftUI's .task {} can cancel via CancellationError OR URLError(.cancelled).
+func isCancellation(_ error: Error) -> Bool {
+    if error is CancellationError { return true }
+    if let urlErr = error as? URLError, urlErr.code == .cancelled { return true }
+    return false
+}
+
 func formattedDate(_ iso: String?) -> String {
     guard let iso else { return "—" }
     let formatter = ISO8601DateFormatter()
