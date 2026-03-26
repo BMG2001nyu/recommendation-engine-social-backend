@@ -72,71 +72,56 @@ graph TD
 
 ### Feed Request Data Flow
 
-```
-GET /api/feed/:userId
-        │
-        ▼
-1. Detect recommendation strategy
-   ├─ 0 events     →  cold_start   (editorial picks + trending)
-   ├─ 1–4 events   →  hybrid       (70% trending + 30% personalized)
-   └─ 5+ events    →  personalized (full IDF interest profile)
-        │
-        ▼
-2. Build Interest Profile
-   └─ distinctiveness(category) = log(1 + totalUsers / usersWithCategory)
-      finalWeight = raw_weight × distinctiveness  [normalised to 0–1]
-        │
-        ▼
-3. Score all candidate venues
-   overall = 0.40 × venue_match        ← IDF profile × venue tags
-           + 0.30 × social_score       ← propagation signals from graph
-           + 0.25 × temporal_score     ← best time slot confidence
-           + 0.05 × freshness_bonus    ← venue joined < 30 days ago
-        │
-        ▼
-4. For each venue: suggest friends + best time slot
-        │
-        ▼
-5. Return ranked recommendations with social proof
+```mermaid
+sequenceDiagram
+    participant iPhone
+    participant API as API (GET /api/feed/:userId)
+    participant FeedEngine as FeedEngine
+    participant InterestProfile as InterestProfile
+    participant VenueMatcher as VenueMatcher
+    participant PeopleMatch as PeopleMatch
+    participant TimeOptimizer as TimeOptimizer
+    participant SocialProof as SocialProof
+    participant Response
+
+    iPhone->>API: GET /api/feed/:userId
+    API->>FeedEngine: detectStrategy(userId)
+    FeedEngine-->>API: cold_start / hybrid / personalized
+    API->>InterestProfile: buildProfile(userId)
+    Note over InterestProfile: distinctiveness = log(1 + totalUsers / usersWithCategory)<br/>finalWeight = raw_weight × distinctiveness [normalised 0–1]
+    InterestProfile-->>API: weightedInterests[]
+    API->>VenueMatcher: scoreCandidates(interests, strategy)
+    Note over VenueMatcher: overall = 0.40×venue_match + 0.30×social_score<br/>+ 0.25×temporal_score + 0.05×freshness_bonus
+    VenueMatcher-->>API: scoredVenues[]
+    API->>PeopleMatch: suggestFriends(userId, venue)
+    PeopleMatch-->>API: suggestedPeople[]
+    API->>TimeOptimizer: bestTimeSlot(userId, venue, friends)
+    TimeOptimizer-->>API: suggestedTime + confidence
+    API->>SocialProof: buildProof(venue, userId)
+    SocialProof-->>API: interestedCount, friendsInterested, momentumTrend
+    API->>Response: ranked recommendations[]
+    Response-->>iPhone: JSON { recommendations, strategy, count }
 ```
 
 ### The Social Proof Flywheel
 
-```
-User A sees venue
-        │
-        └──► expresses interest (POST /api/interests)
-                     │
-                     ▼ (HTTP responds immediately)
-             eventBus.publish('interest_expressed')
-                     │
-                     └──► setImmediate (non-blocking)
-                                  │
-                                  ▼
-                        propagateEngagement(A, venue, 'interested')
-                                  │
-                      ┌───────────┴───────────┐
-                      ▼                       ▼
-               depth-1 friends         depth-2 mutuals
-               levelWeight × edge      levelWeight × 0.3
-               (sorted by initiator    (7-day TTL signal)
-                score — plan-starters
-                see it first)
-                      │
-                      ▼
-          Friend B's feed: venue gets socialScore boost
-                      │
-                      ▼
-          Friend B sees "Alex is interested" → skips to inviting
-                      │
-                      ▼
-          Plan created → plan_confirmed event
-                      │
-                      ▼
-          Even stronger signal (weight 0.90) propagates
-                      │
-                      ▼
-          Next wave converts even faster  ← flywheel complete
+```mermaid
+graph LR
+    UserSeesVenue["User sees venue in feed"]
+    ExpressInterest["Expresses interest\n(POST /api/interests)"]
+    PropagateSignal["Signal propagates\nthrough social graph\n(depth-1 friends + depth-2 mutuals)"]
+    FriendsSeeSocialProof["Friends see social proof\nin their feed\n(socialScore boost)"]
+    MoreLikelyToInvite["Friend sees 'Alex is interested'\nand is more likely to invite"]
+    ConfirmedPlan["Plan created & confirmed\n(plan_confirmed event)"]
+    StrongestSocialProof["Strongest signal propagates\n(weight 0.90)\nNext wave converts faster"]
+
+    UserSeesVenue --> ExpressInterest
+    ExpressInterest --> PropagateSignal
+    PropagateSignal --> FriendsSeeSocialProof
+    FriendsSeeSocialProof --> MoreLikelyToInvite
+    MoreLikelyToInvite --> ConfirmedPlan
+    ConfirmedPlan --> StrongestSocialProof
+    StrongestSocialProof --> UserSeesVenue
 ```
 
 ---
@@ -571,34 +556,25 @@ The spec states: *"Think event-driven. Engagement events should kick off async p
 
 ## Event-Driven Pipeline
 
-```
-POST /api/interests
-        │
-        ├──► persist to venue_engagements (synchronous)
-        │
-        └──► HTTP 200 response sent to client
-                      │
-                      └──► setImmediate (async — does not block response)
-                                    │
-                                    ▼
-                          LunaEventBus.publish('interest_expressed', {userId, venueId, level})
-                                    │
-                                    ▼
-                          Event handler: propagateEngagement(userId, venueId, level)
-                                    │
-                        ┌───────────┴──────────────┐
-                        ▼                          ▼
-              depth-1 (direct friends)    depth-2 (mutuals)
-              sorted by initiator_score   dampened × 0.3
-              strength = level × edge     7-day TTL
-                        │
-                        ▼
-              INSERT propagation_signals
-                        │
-                        ▼
-              Next feed request for any target:
-              SELECT SUM(signal_strength) WHERE consumed=0 AND expires_at > now
-              → socialScore component of feed ranking
+```mermaid
+sequenceDiagram
+    participant Client as Client
+    participant API as POST /api/interests
+    participant DB as DB (venue_engagements)
+    participant EventBus as LunaEventBus
+    participant Propagator as propagateEngagement()
+    participant Signals as propagation_signals
+
+    Client->>API: POST /api/interests { userId, venueId, level }
+    API->>DB: INSERT / UPSERT venue_engagements (synchronous)
+    DB-->>API: persisted
+    API-->>Client: HTTP 200 response
+    API->>EventBus: setImmediate → publish('interest_expressed', { userId, venueId, level })
+    Note over API,EventBus: Response already sent — async from here
+    EventBus->>Propagator: propagateEngagement(userId, venueId, level)
+    Propagator->>Signals: INSERT depth-1 signals<br/>(sorted by initiator_score, strength = levelWeight × edge.strength, 7-day TTL)
+    Propagator->>Signals: INSERT depth-2 signals<br/>(dampened × 0.3, 7-day TTL)
+    Note over Signals: Next feed request for any target user:<br/>SELECT SUM(signal_strength) WHERE consumed=0 AND expires_at > now<br/>→ socialScore component of feed ranking
 ```
 
 ---
