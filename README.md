@@ -43,55 +43,31 @@ Luna's backend solves all three connected problems from the Track 2 spec:
 
 ## Architecture Overview
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                       HTTP Layer (Express)                      │
-│  /health  /api/feed  /api/venues  /api/interests  /api/plans    │
-│  /api/users  /api/events                                        │
-└──────────────────────────┬──────────────────────────────────────┘
-                           │
-                           ▼
-┌─────────────────────────────────────────────────────────────────┐
-│                        Service Layer                            │
-│                                                                 │
-│  ┌───────────────────┐  ┌──────────────────┐  ┌─────────────┐  │
-│  │  Recommendation   │  │    Temporal      │  │  Curation   │  │
-│  │     Engine        │  │   Optimiser      │  │  & Scoring  │  │
-│  │                   │  │                  │  │             │  │
-│  │ • Interest Profile│  │ • Busyness       │  │ • Quality   │  │
-│  │   (IDF weighting) │  │   Sweet-Spot     │  │   Score     │  │
-│  │ • Venue Matcher   │  │ • Friend Avail   │  │ • Trending  │  │
-│  │ • People Match    │  │ • Habit Model    │  │   Detector  │  │
-│  │ • Cold Start      │  │                  │  │             │  │
-│  └─────────┬─────────┘  └────────┬─────────┘  └──────┬──────┘  │
-│            └────────────────────┬┴───────────────────┘         │
-│                                 │                               │
-│  ┌──────────────────────────────▼──────────────────────────┐    │
-│  │               Social Graph Layer                        │    │
-│  │  • Signal Propagator    • BFS Graph Traversal (depth-2) │    │
-│  │  • Initiator Detector   • Social Proof Builder          │    │
-│  └─────────────────────────────────────────────────────────┘    │
-│                                                                 │
-│  ┌─────────────────────────────────────────────────────────┐    │
-│  │                  AI Booking Agent                       │    │
-│  │          Claude Haiku via Anthropic SDK                 │    │
-│  └─────────────────────────────────────────────────────────┘    │
-└──────────────────────────┬──────────────────────────────────────┘
-                           │
-                           ▼
-┌─────────────────────────────────────────────────────────────────┐
-│                   Data Layer (SQLite + WAL)                     │
-│  users  venues  interests  social_edges  venue_engagements      │
-│  plans  plan_participants  propagation_signals  availability    │
-│  engagement_events  (11 tables, 13 indexes)                     │
-└─────────────────────────────────────────────────────────────────┘
-                           │
-                           ▼
-┌─────────────────────────────────────────────────────────────────┐
-│             Event Bus (Node.js EventEmitter, async)             │
-│   interest_expressed  ──►  propagateEngagement()               │
-│   plan_confirmed      ──►  propagateEngagement() (stronger)    │
-└─────────────────────────────────────────────────────────────────┘
+```mermaid
+graph TD
+    HTTP["HTTP Layer (Express)<br/>/health · /api/feed · /api/venues<br/>/api/interests · /api/plans · /api/users · /api/events"]
+
+    subgraph Service["Service Layer"]
+        RE["Recommendation Engine<br/>• Interest Profile (IDF weighting)<br/>• Venue Matcher<br/>• People Match<br/>• Cold Start"]
+        TO["Temporal Optimiser<br/>• Busyness Sweet-Spot<br/>• Friend Availability<br/>• Habit Model"]
+        CS["Curation & Scoring<br/>• Quality Score<br/>• Trending Detector"]
+        SG["Social Graph Layer<br/>• Signal Propagator<br/>• BFS Graph Traversal (depth-2)<br/>• Initiator Detector<br/>• Social Proof Builder"]
+        AI["AI Booking Agent<br/>Claude Haiku via Anthropic SDK"]
+    end
+
+    DATA["Data Layer (SQLite + WAL)<br/>users · venues · interests · social_edges · venue_engagements<br/>plans · plan_participants · propagation_signals · availability<br/>engagement_events  (11 tables, 13 indexes)"]
+
+    EB["Event Bus (Node.js EventEmitter, async)<br/>interest_expressed → propagateEngagement()<br/>plan_confirmed → propagateEngagement() (stronger)"]
+
+    HTTP --> RE
+    HTTP --> TO
+    HTTP --> CS
+    RE --> SG
+    TO --> SG
+    CS --> SG
+    SG --> DATA
+    AI --> DATA
+    DATA --> EB
 ```
 
 ### Feed Request Data Flow

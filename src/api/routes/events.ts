@@ -11,6 +11,8 @@ const eventSchema = z.object({
   type: z.enum([
     'feed_view',
     'venue_view',
+    'venue_skip',
+    'venue_share',
     'interest_expressed',
     'interest_withdrawn',
     'plan_created',

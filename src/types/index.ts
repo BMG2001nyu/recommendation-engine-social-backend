@@ -127,6 +127,8 @@ export interface PlanWithDetails extends Plan {
 export type EventType =
   | 'feed_view'
   | 'venue_view'
+  | 'venue_skip'
+  | 'venue_share'
   | 'interest_expressed'
   | 'interest_withdrawn'
   | 'plan_created'

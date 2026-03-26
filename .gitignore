@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+
+# Compiled output
+dist/
+
+# Database files
+*.db
+*.db-shm
+*.db-wal
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Xcode / iOS build artefacts
+LunaTestUI-iOS/build/
+*.xcuserstate
+xcuserdata/
+**/*.xcuserstate
+
+# Confidential assignment files
+luna-takehome-v3.pdf
+luna_takehome_v3.txt

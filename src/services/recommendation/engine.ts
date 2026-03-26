@@ -188,7 +188,18 @@ export async function generateFeed(userId: string, limit = 10): Promise<Recommen
   })
 
   scored.sort((a, b) => b.overall - a.overall)
-  const top = scored.slice(0, limit)
+
+  // Diversity pass: cap any single category at 2 entries in the top results
+  const categoryCounts = new Map<string, number>()
+  const top: typeof scored = []
+  for (const item of scored) {
+    if (top.length >= limit) break
+    const cat = item.venue.category
+    const count = categoryCounts.get(cat) ?? 0
+    if (count >= 2) continue
+    categoryCounts.set(cat, count + 1)
+    top.push(item)
+  }
 
   // ── Build recommendations ───────────────────────────────────────────────────
   let strategy: 'personalized' | 'cold_start' | 'hybrid' = 'personalized'
