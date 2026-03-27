@@ -17,7 +17,7 @@ enum APIError: LocalizedError {
 @MainActor
 class APIService: ObservableObject {
     // Default to Mac's local IP — change in Settings if different
-    @Published var baseURL: String = UserDefaults.standard.string(forKey: "baseURL") ?? "http://192.168.1.195:3000"
+    @Published var baseURL: String = UserDefaults.standard.string(forKey: "baseURL") ?? "http://10.20.3.95:3000"
     @Published var lastRawResponse: String?
 
     private let decoder: JSONDecoder = {
