@@ -50,7 +50,7 @@ struct SettingsView: View {
                     // ── Server URL ────────────────────────────────────────────
                     Section {
                         HStack {
-                            TextField("http://10.20.3.95:3000", text: $api.baseURL)
+                            TextField("http://192.168.1.195:3000", text: $api.baseURL)
                                 .autocorrectionDisabled()
                                 .textInputAutocapitalization(.never)
                                 .keyboardType(.URL)
